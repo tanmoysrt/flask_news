@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+    {% block content %}
+    <h1>{{ publication }} Headlines</h1>
+    <hr>
+    {% for article in articles %}
+    <h3><a href={{article.link}}>{{article.title}}</a></h3>
+    <a><i>{{article.published}}</i></a><br>
+    <p>{{article.summary}}</p><br>
+    <hr>
+    {% endfor %}
+    {%endblock content%}
