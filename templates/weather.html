@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+    {% block content %}
+        <h4><u>Weather Details</u></h4>
+        <form>
+            <input type="text" name="query" placeholder="City Name">
+            <input type="submit" name="Get Data">
+        </form>
+        <br>
+        <p>City: <b>{{weather.city}}</b></p>
+        <p><i>Weather Description:</i> {{weather.description}} </p>
+        <p>Temperature: {{weather.temperature}}&#8451;</p>
+        <p><i><b>Feels Like: </b></i>{{weather.feels_like}}&#8451;</p>
+        <hr>
+        <h4><u>Currency Exchange Rate</u></h4>
+        <form>
+            from : <select name="currency_from">
+                <option value="USD">USD</option>
+                <option value="GBP">GBP</option>
+                <option value="EUR">EUR</option>
+                <option value="ZAR">ZAR</option>
+                <option value="INR">INR</option>
+            </select>
+            to : <select name="currency_to">
+                <option value="USD">USD</option>
+                <option value="GBP">GBP</option>
+                <option value="EUR">EUR</option>
+                <option value="ZAR">ZAR</option>
+                <option value="INR">INR</option>
+            </select>
+            <input type="submit"  name="Convert">
+        </form>
+        <h4>{{currency_from}} = {{currency_to}} {{rate}}</h4>
+    {%endblock content%}

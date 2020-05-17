@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div>
+    <h1>{{ publication }} Headlines</h1>
+</div>
+<div>
+    <form action="/search" method="GET">
+        <input type="text" name='publication' placeholder="Search"/>
+        <input type="submit" name='SEARCH'>
+    </form>
+</div>
+<hr>
+{% for article in articles %}
+<div>
+<h3><a href={{article.link}}>{{article.title}}</a></h3>
+<a><i>{{article.published}}</i></a><br>
+<p>{{article.summary}}</p><br>
+<hr>
+</div>
+{% endfor %}
+{% endblock content%}
